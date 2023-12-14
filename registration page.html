@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: whitesmoke;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow:0 4px 8px green;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .header {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .header h2 {
+            margin: 0; /* Remove default margin for h2 */
+           
+        }
+        .logo {
+            max-width: 80px; /* width for logo */
+            height: auto;
+            position: absolute;
+            top: 20px;
+            right: 780px; 
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: inherit;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease; /* Add transition for smooth effect */
+        }
+
+        .form-group input:hover,
+        .form-group button:hover {
+            background-color: #ddd; /* Change background color on hover */
+        }
+
+        .form-group button {
+            background-color: green;
+            color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .text{
+            font-size: 11px;
+            font-weight: inherit;
+            margin-bottom: 4px;
+        }
+        
+
+        .terms a {
+            color:  blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="images/safiOlogo.png" alt="Logo">
+            <h2>SIGN UP</h2>
+        </div>
+        <div class="form-container">
+            <form action="#" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">FULL NAME:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">EMAIL ADDRESS:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">PHONE NUMBER:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="termsCheckbox" required>
+                <label for="termsCheckbox" class="terms">I have read and agreed to Safinet's<a href="#">Terms and Policies</a></label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+            <div class="text">
+                <h3>Already have an account? <a href="login.html">Login here</a></h3>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            // Check if the terms checkbox is checked
+            var termsCheckbox = document.getElementById("termsCheckbox");
+            if (!termsCheckbox.checked) {
+                alert("Please agree to the Terms and Policies.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
